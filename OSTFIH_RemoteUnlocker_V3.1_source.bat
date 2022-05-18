@@ -2329,7 +2329,7 @@ if %errorlevel%==1 set Challenge=Pass
 if %errorlevel%==0 set Challenge=fail
 if "%Challenge%"=="Pass" goto challengeUIDpass_ROO
 if "%Challenge%"=="fail" goto challengeUIDfail_ROO
-:allow_ROO
+:allowUID_ROO
 .\data\fastboot\fastboot.exe -s %psn% oem allport 2>nul
 .\data\fastboot\fastbootfih.exe -s %psn% oem getRootStatus 2>&1 | findstr getRootStatus | .\data\bin\sed.exe "s/getRootStatus: /Root Status: /g"
 echo ========================================================
